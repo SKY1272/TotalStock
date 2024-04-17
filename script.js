@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let details = [];
 
-  // Load initial data from the database
+  
   loadDataFromApi();
 
-  // Function to load data from the API
+  
   function loadDataFromApi() {
     fetch(apiUrl)
       .then(response => {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => console.error('Error loading data from API:', error));
   }
 
-  // Function to save data to the API
+  
   function saveDataToApi(data) {
     fetch(apiUrl, {
       method: 'POST',
@@ -42,13 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(data => {
         console.log('Data saved to API:', data);
-        // After saving, reload data to reflect changes
+        
         loadDataFromApi();
       })
       .catch(error => console.error('Error saving data to API:', error));
   }
 
-  // Function to delete entry from the API
+  
   function deleteEntryFromApi(id) {
     const deleteUrl = `${apiUrl}/${id}`;
     fetch(deleteUrl, {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(data => {
         console.log('Entry deleted from API:', data);
-        // After deleting, reload data to reflect changes
+        
         loadDataFromApi();
       })
       .catch(error => console.error('Error deleting entry from API:', error));
